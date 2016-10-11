@@ -7,7 +7,6 @@ module EnvRq
   def self.validate
     env_rq = Rq.new
     yield env_rq
-    #TODO: add handlers w/colors: http://stackoverflow.com/questions/2070010/how-to-output-my-ruby-commandline-text-in-different-colours
     issues_by_severity = env_rq.issues.group_by { |i| i[:requirement].importance }
     Rq::ISSUE_LEVELS.reverse.each do |severity|
       issues = issues_by_severity[severity]

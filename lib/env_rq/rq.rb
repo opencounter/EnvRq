@@ -2,6 +2,7 @@ class Rq
   attr_reader :issues, :handlers
 
   ISSUE_LEVELS = [:fatal, :warn, :info]
+  COLORS = { info: "\e[37m", warn: "\e[36m", fatal: "\e[31m" }
 
   def initialize
     @issues = []
@@ -32,7 +33,7 @@ class Rq
       desc = r.options[:desc]
       desc = desc ? "(#{desc}) " : ""
 
-      puts "#{r.env_var}#{desc}: #{issue[:msgs].join('')}"
+      puts "#{COLORS[issue[:importance]]}#{r.env_var}#{desc}: #{issue[:msgs].join('')}\e[0m"
     end
   end
 
