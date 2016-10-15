@@ -2,7 +2,7 @@ class Rq
   attr_reader :issues, :handlers
 
   ISSUE_LEVELS = [:fatal, :warn, :info]
-  COLORS = { info: "\033[37m", warn: "\033[36m", fatal: "\033[31m" }
+  COLORS = { info: "\033[37m", warn: "\033[1;33m", fatal: "\033[31m" }
 
   def initialize
     @issues = []
