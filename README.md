@@ -1,20 +1,26 @@
-#EnvRq
+# EnvRq
 
 Simple environment variable validation / documentation in ~100 LOC.
 
-##Features
+## Features
 * Severity levels (Info, Warning, Fatal).
 * Type checking
 * Optional ENV variable descriptions.
 * Overidable issue handlers (by severity level).
 
-##Install
+## Install
 Add to your Gemfile and bundle.
 ```
 gem "env_rq", git: "https://github.com/opencounter/EnvRq"
 ```
 
-##Usage
+## Run Specs
+```
+bundle exec rake test
+
+```
+
+## Usage
 ```
 require('env_rq')
 
@@ -46,5 +52,5 @@ EnvRq.validate do |e|
 end
 ```
 
-##FAQ
-No the 100 LOC count does not include the tests... sheesh.
+## FAQ
+Note the 100 LOC count does not include the tests.
