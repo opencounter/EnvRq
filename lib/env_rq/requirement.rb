@@ -36,7 +36,7 @@ module EnvRq
         raise '#{type} check is unimplemented'
       end
 
-      puts err
+      puts err if err
       [err] unless err.nil?
     end
   end
